@@ -9,6 +9,7 @@ public class FirstPersonAudio : MonoBehaviour
     [Header("Step")]
     public AudioSource stepAudio;
     public AudioSource runningAudio;
+    public AudioSource surfaceAudio; // New surface audio source
     [Tooltip("Minimum velocity for moving audio to play")]
     /// <summary> "Minimum velocity for moving audio to play" </summary>
     public float velocityThreshold = .01f;
@@ -29,7 +30,7 @@ public class FirstPersonAudio : MonoBehaviour
     public AudioSource crouchStartAudio, crouchedAudio, crouchEndAudio;
     public AudioClip[] crouchStartSFX, crouchEndSFX;
 
-    AudioSource[] MovingAudios => new AudioSource[] { stepAudio, runningAudio, crouchedAudio };
+    AudioSource[] MovingAudios => new AudioSource[] { stepAudio, runningAudio, crouchedAudio, surfaceAudio };
 
 
     void Reset()
@@ -40,6 +41,7 @@ public class FirstPersonAudio : MonoBehaviour
         stepAudio = GetOrCreateAudioSource("Step Audio");
         runningAudio = GetOrCreateAudioSource("Running Audio");
         landingAudio = GetOrCreateAudioSource("Landing Audio");
+        surfaceAudio = GetOrCreateAudioSource("Surface Audio"); // Create or get the new audio source
 
         // Setup jump audio.
         jump = GetComponentInParent<Jump>();
@@ -76,9 +78,13 @@ public class FirstPersonAudio : MonoBehaviour
             {
                 SetPlayingMovingAudio(runningAudio);
             }
-            else
+            else if(groundCheck.collidedTag == "wood")
             {
                 SetPlayingMovingAudio(stepAudio);
+            }
+            else
+            {
+                SetPlayingMovingAudio(surfaceAudio);
             }
         }
         else

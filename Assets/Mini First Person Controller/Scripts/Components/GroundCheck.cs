@@ -17,6 +17,8 @@ public class GroundCheck : MonoBehaviour
     Vector3 RaycastOrigin => transform.position + Vector3.up * OriginOffset;
     float RaycastDistance => distanceThreshold + OriginOffset;
 
+    public string collidedTag; // Variable to store the collided object's tag
+
 
     void LateUpdate()
     {
@@ -37,5 +39,10 @@ public class GroundCheck : MonoBehaviour
     {
         // Draw a line in the Editor to show whether we are touching the ground.
         Debug.DrawLine(RaycastOrigin, RaycastOrigin + Vector3.down * RaycastDistance, isGrounded ? Color.white : Color.red);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        collidedTag = other.gameObject.tag; // Store the collided object's tag
+        Debug.Log("Collided with tag: " + collidedTag);
     }
 }
