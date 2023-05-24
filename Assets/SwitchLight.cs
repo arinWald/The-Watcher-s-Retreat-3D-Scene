@@ -6,27 +6,39 @@ public class SwitchLight : MonoBehaviour
 {
     public Light lightObject;
     public Renderer emissiveObject;
+    public GameObject raycastObject;
     public float emissiveIntensityOn = 1f;
     public float emissiveIntensityOff = 0f;
-    public AudioClip audioClip;  // Reference to the audio clip
-    private AudioSource audioSource;  // Reference to the AudioSource component
-
+    public float raycastDistance = 100f; // Adjust the raycast distance here
+    public AudioClip audioClip;
+    private AudioSource audioSource;
     private bool isLightEnabled = true;
 
     private void Start()
     {
-        // Get the AudioSource component attached to the same game object
         audioSource = GetComponent<AudioSource>();
-        audioSource.clip = audioClip; // Assign the audio clip to the AudioSource
+        audioSource.clip = audioClip;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ToggleLight();
-            ToggleEmissiveIntensity();
-            PlayAudioClip();  // Call the function to play the audio clip
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            Debug.DrawRay(ray.origin, ray.direction * raycastDistance, Color.red, 1f);
+
+            if (Physics.Raycast(ray, out hit, raycastDistance))
+            {
+                if (hit.collider.gameObject == raycastObject)
+                {
+                    Debug.Log("Hit object: " + hit.collider.gameObject.name);
+                    ToggleLight();
+                    ToggleEmissiveIntensity();
+                    PlayAudioClip();
+                }
+            }
         }
     }
 
@@ -59,6 +71,6 @@ public class SwitchLight : MonoBehaviour
 
     private void PlayAudioClip()
     {
-        audioSource.PlayOneShot(audioClip);  // Play the assigned audio clip
+        audioSource.PlayOneShot(audioClip);
     }
 }
