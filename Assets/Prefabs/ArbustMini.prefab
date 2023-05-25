@@ -85,7 +85,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: Tree Data
   m_EditorClassIdentifier: 
   _uniqueID: 171
-  materialHash: 5f48e2bbb6a97e1234afafbbf3d03517-672514048
+  materialHash: 3009ab47e321a089a587ef3419804f57-672514048
   root:
     _uniqueID: 1
     seed: 0
@@ -5323,8 +5323,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Optimized Bark Material
-  m_Shader: {fileID: 4800000, guid: 0f4122b9a743b744abe2fb6a0a88868b, type: 3}
-  m_ValidKeywords: []
+  m_Shader: {fileID: 4800000, guid: 99134b1f0c27d54469a840832a28fadf, type: 3}
+  m_ValidKeywords:
+  - _WINDQUALITY_NONE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -5347,6 +5348,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ExtraTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _GlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -5355,21 +5360,36 @@ Material:
         m_Texture: {fileID: 2800000, guid: d2d5a3ba432387a499c0800ca8648dce, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SubsurfaceTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _TranslucencyMap:
         m_Texture: {fileID: 2800000, guid: ae08061e7b4080b449c534c8f42a3b15, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BillboardKwToggle: 0
+    - _BillboardShadowFade: 0.5
     - _Cull: 2
     - _Cutoff: 0.3
+    - _Glossiness: 0.5
+    - _HueVariationKwToggle: 0
+    - _Metallic: 0
+    - _NormalMapKwToggle: 0
     - _Shininess: 0.078125
     - _SquashAmount: 1
+    - _SubsurfaceIndirect: 0.25
+    - _SubsurfaceKwToggle: 0
+    - _TwoSided: 2
     - _WindQuality: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
+    - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SubsurfaceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
