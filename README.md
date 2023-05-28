@@ -1,7 +1,7 @@
 # The-Watcher-s-Retreat-3D-Scene
 
 Used Unity Assets Store Links:
-- [Food and Kitchen Props Pack] https://assetstore.unity.com/packages/3d/props/food-and-kitchen-props-pack-85050#description
+- [Food and Kitchen Props Pack] (https://assetstore.unity.com/packages/3d/props/food-and-kitchen-props-pack-85050#description)
 - [Fire Extinguisher Realistic] https://assetstore.unity.com/packages/3d/props/fire-extinguisher-realistic-230711
 - [Fantasy landscape] https://assetstore.unity.com/packages/3d/environments/fantasy-landscape-103573
 - [Hand Painted Nature Kit LITE] https://assetstore.unity.com/packages/3d/environments/hand-painted-nature-kit-lite-69220
