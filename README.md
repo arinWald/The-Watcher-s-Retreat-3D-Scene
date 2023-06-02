@@ -21,34 +21,3 @@ This work is licensed under a
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
-<style>
-    .cool-download-button {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        border-radius: 5px;
-    }
-    .cool-download-button:hover::after {
-        content: "";
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        width: 300%;
-        height: 300%;
-        background: linear-gradient(45deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
-        opacity: 0;
-        transform: rotate(45deg);
-        transition: all 0.3s ease-out;
-    }
-    .cool-download-button:hover::after {
-        top: 0;
-        left: 0;
-        opacity: 1;
-    }
-</style>
-
-<div class="cool-download-button">
-    <iframe frameborder="0" src="https://itch.io/embed/2099989?border_width=0&amp;bg_color=072a08&amp;fg_color=fb922b&amp;link_color=1d6815&amp;border_color=000000" width="550" height="165"></iframe>
-    <a href="https://arinwald.itch.io/the-watchers-retreat-firewatch-tribute">The Watcher's Retreat - Firewatch Tribute by arinWald</a>
-</div>
-
